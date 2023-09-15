@@ -190,10 +190,24 @@ public class CreateJPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
       try{
       
-          product.setName(txtName.getText());
-          product.setDescr(txtDescr.getText());
-          product.setPrice(Double.parseDouble(txtPrice.getText()));
-          product.setAvailable(txtAvailNum.getText().equals("Yes"));
+          // UI values
+          String name = txtName.getText();
+          String description = txtDescr.getText();
+          double price = Double.parseDouble(txtPrice.getText());
+          boolean available = txtAvailNum.getText().equals("Yes");
+          
+          // Validations
+          if(name.equals("") || description.equals("") ||price < 0 ){
+              throw new Exception();
+          }
+          
+          // Save UI in product
+          product.setName(name);
+          product.setDescr(description);
+          product.setPrice(price);
+          product.setAvailable(available);
+          
+          // Display message
           JOptionPane.showMessageDialog(this, "Product Information Saved."); 
         
       } catch(Exception e){
