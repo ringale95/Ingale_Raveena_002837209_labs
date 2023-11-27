@@ -2,6 +2,7 @@
 **/.DS_Store
 
 **/*.class
+/Lab_4/build/
 /Lab_6/nbproject/private/
 /Lab_6/build/
 /Lab_6/dist/
